@@ -8,10 +8,14 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors({origin: [
-      "https://your-frontend.onrender.com",
+app.use(cors({
+    origin: [
+      "https://url-shortner-frontend-ixr1.onrender.com",
       "http://localhost:5173",
-    ]}));
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  }));
 
 app.use(express.json());
 
