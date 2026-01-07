@@ -4,7 +4,7 @@ import axios from "axios";
 
 const App = () => {
   const [originalUrl, setOriginalUrl] = useState("");
-  const [shortUrl, setShortUrl] = useState("");
+  const [shortUrl, setShortUrl] = useState("ssssssssssss");
   const url = import.meta.env.VITE_BASE_URL + `/api/${shortUrl}`;
 
   const handleSubmit = async (e) => {
@@ -48,12 +48,12 @@ const App = () => {
         </button>
       </form>
       {shortUrl && (
-        <div className="flex items-center  gap-4 bg-white px-20 py-1 rounded-lg">
+        <div className="flex flex-col sm:flex-row w-full max-w-xl gap-2 mb-6">
           <a
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 underline "
+            className="text-blue-600 underline flex-1 px-4 py-2 bg-white  rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 "
           >
             {url}
           </a>
@@ -63,7 +63,7 @@ const App = () => {
               navigator.clipboard.writeText(url)
               alert("Link is copied");
             } }
-            className="bg-blue-500 px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+            className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition"
           >
             Copy
           </button>
