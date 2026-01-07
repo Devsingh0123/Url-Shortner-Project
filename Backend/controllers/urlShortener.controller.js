@@ -51,6 +51,7 @@ export const shortUrl = async (req, res) => {
     await url.save();
 
     return res.redirect(url.originalUrl);
+    
   } catch (error) {
      return res.status(500).json({ message: "error in redirecting on orignal url" });
   }

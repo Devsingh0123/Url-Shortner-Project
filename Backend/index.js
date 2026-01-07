@@ -8,11 +8,7 @@ dotenv.config();
 connectDB();
 
 const app = express();
-app.use(cors({
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST", "OPTIONS"],
-    allowedHeaders: ["Content-Type"],
-  }));
+app.use(cors());
 
 app.use(express.json());
 
