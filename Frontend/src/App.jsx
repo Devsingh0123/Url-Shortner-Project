@@ -4,7 +4,7 @@ import axios from "axios";
 
 const App = () => {
   const [originalUrl, setOriginalUrl] = useState("");
-  const [shortUrl, setShortUrl] = useState("ssssssssssss");
+  const [shortUrl, setShortUrl] = useState("");
   const url = import.meta.env.VITE_BASE_URL + `/api/${shortUrl}`;
 
   const handleSubmit = async (e) => {
