@@ -5,14 +5,14 @@ import axios from "axios";
 const App = () => {
   const [originalUrl, setOriginalUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
-  const url = import.meta.env.VITE_BASE_URL + `/${shortUrl}`;
+  const url = import.meta.env.VITE_BASE_URL + `/api/${shortUrl}`;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const res = await axios.post(
-        import.meta.env.VITE_BASE_URL + "/shortener",
+        import.meta.env.VITE_BASE_URL + "/api/shortener",
         {
           originalUrl,
         }
